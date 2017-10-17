@@ -1,0 +1,154 @@
+/* 
+	Copyright (c) 2017 JT Dotzler
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+	
+	tl;dr: Do whatever you want with it, but don't blame me if you break stuff with it.
+*/
+
+/*
+	Notes:
+	
+		*All class names are prefaced by "mcss-" to avoid any naming issues.
+		
+		*All styles designed to work together have a container class named
+			to represent what it is, then all child classes have that name
+			and the name of the component they represent separated by a dash
+			as their class name.
+*/
+
+@font-face {
+	/* Font courtesy of FontPalace.com (http://www.fontpalace.com/font-download/Mathematical+Pi+1/ (also Mathematical Pi 2 through 6)) */
+	font-family: "Math";
+	src: url("../font/Mathematical Pi 1.ttf");
+}
+
+i.font-math {
+	font-family: "Math";
+	font-style: normal;
+}
+
+.mcss-mathtext {
+	font-family: "Math";
+}
+
+/* Expressions */
+.mcss-expression {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+}
+	
+	
+/* Exponenets */
+.mcss-expression .mcss-exponent {
+	display: flex;
+	align-items: center;
+}
+
+.mcss-expression .mcss-exponent .mcss-exponent-base {
+
+}
+
+.mcss-expression .mcss-exponent .mcss-exponent-power {
+	align-self:flex-start;
+	font-size:0.6em;
+}
+
+/* Fractions */
+.mcss-expression .mcss-fraction {
+	display:flex;
+	flex-direction: column;
+	margin: 0px 3px;
+}
+
+.mcss-expression .mcss-fraction .mcss-fraction-num {
+	border-bottom: 1px solid black;
+	margin-bottom: -1px!important;
+}
+
+.mcss-expression .mcss-fraction .mcss-fraction-den {
+	border-top: 1px solid black;
+}
+
+.mcss-expression .mcss-fraction .mcss-fraction-den, .mcss-expression .mcss-fraction .mcss-fraction-num {
+	margin:auto;
+	padding:3px 5px;
+}
+
+.mcss-expression .mscc-fraction * .mscc-fraction, .mcss-expression .mscc-fraction * .mscc-fraction {
+	background-color: red;
+}
+
+
+/* Sequences (sigma sum, pi product, U union, general sequence) */
+.mcss-expression .mcss-sequence {
+	display:inline-flex;
+	flex-direction: row;
+	align-items:center;
+	flex-shrink:0;
+	margin:5px;
+}
+
+.mcss-expression .mcss-sequence .mcss-sequence-limits {
+	display:flex;
+	flex-direction: column;
+}
+
+.mcss-expression .mcss-sequence .mcss-sequence-limits .mcss-sequence-limits-symbol {
+	font-size:2.5em;
+	margin:auto;
+	order:0;
+}
+
+.mcss-expression .mcss-sequence .mcss-sequence-limits .mcss-sequence-limits-symbol:not(.mcss-mathtext) {
+	margin-top:-6px;
+}
+
+.mcss-expression .mcss-sequence.small .mcss-sequence-limits .mcss-sequence-limits-symbol {
+	font-size: 1.5em;
+}
+
+.mcss-expression .mcss-sequence .mcss-sequence-limits .mcss-sequence-limits-top {
+	margin:auto;
+	order:-1;
+}
+
+.mcss-expression .mcss-sequence .mcss-sequence-limits .mcss-sequence-limits-bottom {
+	margin:auto;
+	margin-top:-10px;
+	order:1;
+}
+
+.mcss-expression .mcss-sequence .mcss-sequence-summand {
+	/* So far doesn't actually need any styling */
+}
+
+.mcss-expression .mcss-sequence.small .mcss-sequence-limits .mcss-sequence-limits-top {
+	font-size:0.6em;
+}
+
+.mcss-expression .mcss-sequence.small .mcss-sequence-limits .mcss-sequence-limits-bottom {
+	font-size:0.6em;
+	margin-top:-6px;
+}
+
+.mcss-expression .mcss-sequence.small .mcss-sequence-summand {
+	font-size:0.8em;
+}

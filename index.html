@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MathCSS testing/demo</title>
+		<meta charset="utf-8">
+		<meta name="author" content="JT Dotzler">
+		<meta name="application-name" content="MathCSS testing/demo">
+		<meta name="description" content="A (WIP) CSS library to properly format math formulas and equations.">
+		
+		<link rel="stylesheet" href="css/mcss.css">
+	</head>
+	<body>
+		<div class="mcss-expression">
+			<div class="mcss-fraction">
+				<div class="mcss-fraction-num">
+					<div class="mcss-fraction">
+						<div class="mcss-fraction-num">1</div>
+						<div class="mcss-fraction-den">2</div>
+					</div>
+				</div>
+				<div class="mcss-fraction-den">
+					<div class="mcss-expression">
+						<div>1 + </div> 
+						<div class="mcss-fraction">
+							<div class="mcss-fraction-num">
+								<div class="mcss-fraction">
+									<div class="mcss-fraction-num">
+										<div class="mcss-sequence small">
+											<div class="mcss-sequence-limits">
+												<div class="mcss-sequence-limits-symbol mcss-mathtext">G</div>
+												<div class="mcss-sequence-limits-top">n</div>
+												<div class="mcss-sequence-limits-bottom">k = 1</div>
+											</div>
+											<div class="mcss-sequence-summand">k</div>
+										</div>
+									</div>
+									<div class="mcss-fraction-den">3</div>
+								</div>
+							</div>
+							<div class="mcss-fraction-den">3</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="mcss-sequence">
+				<div class="mcss-sequence-limits">
+					<div class="mcss-sequence-limits-symbol mcss-mathtext">J</div>
+					<div class="mcss-sequence-limits-top">n</div>
+					<div class="mcss-sequence-limits-bottom">k = 1</div>
+				</div>
+				<div class="mcss-sequence-summand">
+					<div class="mcss-exponent">
+						<div class="mcss-exponent-base">k</div>
+						<div class="mcss-exponent-power">2</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
