@@ -1,61 +1,114 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>MathCSS testing/demo</title>
-		<meta charset="utf-8">
-		<meta name="author" content="JT Dotzler">
-		<meta name="application-name" content="MathCSS testing/demo">
-		<meta name="description" content="A (WIP) CSS library to properly format mathematical expressions.">
-		
-		<link rel="stylesheet" href="css/mcss.css">
-	</head>
-	<body>
-		<div class="mcss-expression">
-			<div class="mcss-fraction">
-				<div class="mcss-fraction-num">
-					<div class="mcss-fraction">
-						<div class="mcss-fraction-num">1</div>
-						<div class="mcss-fraction-den">2</div>
-					</div>
-				</div>
-				<div class="mcss-fraction-den">
-					<div class="mcss-expression">
-						<div>1 + </div> 
-						<div class="mcss-fraction">
-							<div class="mcss-fraction-num">
-								<div class="mcss-fraction">
-									<div class="mcss-fraction-num">
-										<div class="mcss-sequence small">
-											<div class="mcss-sequence-limits">
-												<div class="mcss-sequence-limits-symbol mcss-mathtext">G</div>
-												<div class="mcss-sequence-limits-top">n</div>
-												<div class="mcss-sequence-limits-bottom">k = 1</div>
-											</div>
-											<div class="mcss-sequence-summand">k</div>
-										</div>
-									</div>
-									<div class="mcss-fraction-den">3</div>
-								</div>
-							</div>
-							<div class="mcss-fraction-den">3</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="mcss-sequence">
-				<div class="mcss-sequence-limits">
-					<div class="mcss-sequence-limits-symbol mcss-mathtext">J</div>
-					<div class="mcss-sequence-limits-top">n</div>
-					<div class="mcss-sequence-limits-bottom">k = 1</div>
-				</div>
-				<div class="mcss-sequence-summand">
-					<div class="mcss-exponent">
-						<div class="mcss-exponent-base">k</div>
-						<div class="mcss-exponent-power">2</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mcss.css">
+    <title>MCSS Testing & Demo</title>
+</head>
+<body>
+    <p>MCSS is a pure CSS library for displaying and formatting mathematical  expressions.</p>
+    <p>Though heavy on markup, it allows for proper and easy formatting of almost any mathematical expression, from a simple
+        <span class="mcss mcss-inline">
+            <span class="mcss-fraction">
+                <span class="mcss-fraction-num">1</span>
+                <span class="mcss-fraction-den">2</span>
+            </span>
+        </span>
+        (vertically aligning within a p is still hard) to extremely complex expressions, such as
+        <span class="mcss mcss-inline">
+            <span class="mcss-fraction">
+                <span class="mcss-fraction-num">1</span>
+                <span class="mcss-fraction-den">2</span>
+            </span>
+            +
+            <span class="mcss-fraction">
+                <span class="mcss-fraction-num">1</span>
+                <span class="mcss-fraction-den">
+                    <span class="mcss-largeop">
+                        <span class="mcss-largeop-config">
+                            <span class="mcss-largeop-config-symbol">&Pi;</span>
+                            <span class="mcss-largeop-config-bottom">n=0</span>
+                            <span class="mcss-largeop-config-top">&infin;</span>
+                        </span>
+                        <span class="mcss-fraction">
+                            <span class="mcss-fraction-num">n</span>
+                            <span class="mcss-fraction-den">
+                                <span class="mcss-fraction">
+                                    <span class="mcss-fraction-num">1</span>
+                                    <span class="mcss-fraction-den">2</span>
+                                </span>
+                                +
+                                <span class="mcss-largeop">
+                                    <span class="mcss-largeop-config">
+                                        <span class="mcss-largeop-config-symbol">&Sigma;</span>
+                                        <span class="mcss-largeop-config-bottom">m=0</span>
+                                        <span class="mcss-largeop-config-top">&infin;</span>
+                                    </span>
+                                    <span class="mcss-fraction">
+                                        <span class="mcss-fraction-num">
+                                            <span class="mcss-largeop">
+                                                <span class="mcss-largeop-config">
+                                                    <span class="mcss-largeop-config-symbol">&Pi;</span>
+                                                    <span class="mcss-largeop-config-bottom">p=0</span>
+                                                    <span class="mcss-largeop-config-top">&infin;</span>
+                                                </span>
+                                                <span class="mcss-exponent">
+                                                    <span class="mcss-fraction">
+                                                        <span class="mcss-fraction-num">n</span>
+                                                        <span class="mcss-fraction-den">m</span>
+                                                    </span>
+                                                    <span class="mcss-exponent-power">p</span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="mcss-fraction-den">m</span>
+                                    </span>
+                                </span>                            
+                            </span>
+                        </span>
+                    </span>
+                </span>
+            </span>
+        </span>
+        . As far as I know, this expression is meaningless and probably not even possible to compute by hand, it's just an example. This p block is also intentionally made longer to show that it successfully wraps around the expression (Zoom in if it's still not long enough)
+    </p>
+    <p>
+        <span class="mcss">
+            <span class="mcss-largeop">
+                <span class="mcss-largeop-config">
+                    <span class="mcss-largeop-config-symbol">&Sigma;</span>
+                    <span class="mcss-largeop-config-bottom">x=0</span>
+                    <span class="mcss-largeop-config-top">&infin;</span>
+                </span>
+                <span class="mcss-largeop">
+                    <span class="mcss-largeop-config">
+                        <span class="mcss-largeop-config-symbol">&Sigma;</span>
+                        <span class="mcss-largeop-config-bottom">y=0</span>
+                        <span class="mcss-largeop-config-top">&infin;</span>
+                    </span>
+                    <span class="mcss-largeop">
+                        <span class="mcss-largeop-config">
+                            <span class="mcss-largeop-config-symbol">&Sigma;</span>
+                            <span class="mcss-largeop-config-bottom">z=0</span>
+                            <span class="mcss-largeop-config-top">&infin;</span>
+                        </span>
+                        <span class="mcss-largeop">
+                            <span class="mcss-largeop-config">
+                                <span class="mcss-largeop-config-symbol">&Sigma;</span>
+                                <span class="mcss-largeop-config-bottom">n&equals;0</span>
+                                <span class="mcss-largeop-config-top">&infin;</span>
+                            </span>
+                            <span class="mcss-fraction">
+                                <span class="mcss-fraction-num">x*y*z</span>
+                                <span class="mcss-fraction-den">n</span>
+                            </span>
+                        </span>
+                    </span>
+                </span>
+            </span>
+        </span>
+        is also a complex, but meaningless expression for the sake of demonstration.
+    </p>
+</body>
 </html>
